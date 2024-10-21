@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"ios":{"default":{"projectId":"auth-demo-hepl-2024","appId":"1:449572698972:ios:270da24f8f461bf2f0df99","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"auth-demo-hepl-2024","configurations":{"ios":"1:449572698972:ios:270da24f8f461bf2f0df99"}}}}}}
