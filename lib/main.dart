@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'firebase_options.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -72,15 +72,18 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
           const SizedBox(width: 10),
           ElevatedButton(
             child: const Text('Créer un utilisateur'),
-            onPressed: () async {
+            onPressed: ()  {
               try {
-                await FirebaseAuth.instance
+                  FirebaseAuth.instance
                     .createUserWithEmailAndPassword(
-                    email: "${Random().nextInt(100000)}@gmail.com",
-                    password: "1234567890")
-                    .then((value) => setState(() {
-                  _userCreated = true;
-                }));
+                        email: "${Random().nextInt(100000)}@gmail.com",
+                        password: "1234567890")
+                    .then((value) {
+                  setState(() {
+                    _userCreated = true;
+                  });
+                });
+
               } on FirebaseAuthException catch (e) {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   showCloseIcon: true,
